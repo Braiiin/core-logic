@@ -16,11 +16,8 @@ sys.path.insert(0, os.path.join(os.getcwd()+"/logic"))
 from logic import create_app
 
 
-def create_template_app(**kwargs):
-	"""Create a template Flask app"""
-	app = create_app(**kwargs)
-	
-	from . import views  # this must be placed here, after the app is created
-	app.register_blueprints()
-	
-	return app
+def create_core_app(**kwargs):
+    """Create a template Flask app"""
+    app = create_app(**kwargs)
+
+    return app
